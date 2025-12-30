@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Dumbbell, Instagram, Twitter, Mail } from 'lucide-react';
+import { Dumbbell, Instagram, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -19,9 +19,8 @@ const Footer: React.FC = () => {
               Privacy-first strength tracking for those who value their data as much as their gains. Built for the modern athlete.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-neutral-400 hover:text-orange-600 transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="text-neutral-400 hover:text-orange-600 transition-colors"><Instagram size={20} /></a>
-              <a href="mailto:support@gitfit.app" className="text-neutral-400 hover:text-orange-600 transition-colors"><Mail size={20} /></a>
+              <a href="https://instagram.com/gitfit.app" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-orange-600 transition-colors"><Instagram size={20} /></a>
+              <a href="mailto:support@gitfit.health" className="text-neutral-400 hover:text-orange-600 transition-colors"><Mail size={20} /></a>
             </div>
           </div>
 
@@ -39,8 +38,6 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-neutral-900 mb-4">Legal</h3>
             <ul className="space-y-2">
               <li><Link to="/privacy" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Privacy Policy</Link></li>
-              <li><a href="#" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Cookie Policy</a></li>
             </ul>
           </div>
 

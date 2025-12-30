@@ -64,9 +64,7 @@ const Home: React.FC = () => {
                 <a href="#" className="w-full sm:w-auto flex items-center justify-center bg-black text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform">
                   <span className="mr-3"></span> Download on App Store
                 </a>
-                <a href="#features" className="text-neutral-600 font-semibold hover:text-orange-600 transition-colors">
-                  See how it works &rarr;
-                </a>
+
               </div>
             </div>
             <div className="relative flex justify-center lg:justify-end">
@@ -110,14 +108,16 @@ const Home: React.FC = () => {
 
       {/* Showcase Section */}
       <section className="py-24 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
           <h2 className="text-3xl font-bold text-neutral-900">Beautifully Simple.</h2>
         </div>
-        <div className="flex overflow-x-auto pb-12 space-x-8 px-8 no-scrollbar scroll-smooth justify-center">
-          <AppMockup imageUrl="/screenshots/dashboard.png" alt="Dashboard" className="flex-shrink-0 scale-90" />
-          <AppMockup imageUrl="/screenshots/progress-habits.png" alt="Progress - Daily Habits" className="flex-shrink-0 scale-100" />
-          <AppMockup imageUrl="/screenshots/nutrition.png" alt="Nutrition Tracking" className="flex-shrink-0 scale-90" />
-          <AppMockup imageUrl="/screenshots/progress-data.png" alt="Progress - Data" className="flex-shrink-0 scale-90" />
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex justify-center items-center gap-4 flex-wrap md:flex-nowrap">
+            <AppMockup imageUrl="/screenshots/dashboard.png" alt="Dashboard" className="flex-shrink-0" />
+            <AppMockup imageUrl="/screenshots/progress-habits.png" alt="Progress - Daily Habits" className="flex-shrink-0" />
+            <AppMockup imageUrl="/screenshots/nutrition.png" alt="Nutrition Tracking" className="flex-shrink-0" />
+            <AppMockup imageUrl="/screenshots/progress-data.png" alt="Progress - Data" className="flex-shrink-0" />
+          </div>
         </div>
       </section>
 
@@ -130,7 +130,7 @@ const Home: React.FC = () => {
             <div className="flex justify-center items-center space-x-3 text-neutral-400">
               <span className="font-bold text-white">The GitFit Team</span>
               <span>•</span>
-              <span>London, UK</span>
+              <span>Edinburgh, UK</span>
             </div>
           </div>
         </div>

@@ -31,3 +31,15 @@ Build locally:
 - `npm run build`
 
 Then deploy the contents of `dist/` to your static host.
+
+### GitHub Pages (recommended)
+
+GitHub Pages cannot run Vite/React source files directly (it will serve `index.html`/`index.tsx` as-is, and the browser cannot execute TSX/TypeScript). You must publish the **built** site.
+
+This repo includes a workflow at `.github/workflows/deploy-pages.yml` that builds the site and deploys the `dist/` folder to Pages.
+
+1. In GitHub, open your repo → **Settings** → **Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Push to `main` (or re-run the workflow under the **Actions** tab).
+
+Custom domain: the file `public/CNAME` is included in the build output so Pages keeps using `gitfit.health`.

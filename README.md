@@ -18,3 +18,16 @@ View your app in AI Studio: https://ai.studio/apps/drive/1s6em4M_jXBjWvxh8OOGydn
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Deploying (important)
+
+This is a Vite + React site. The hosting provider must serve the **built** output from `dist/`.
+
+If you deploy the repository files directly (without running the build), you can get a blank page because `index.html` won’t load the React entry module.
+
+Build locally:
+
+- `npm install`
+- `npm run build`
+
+Then deploy the contents of `dist/` to your static host.

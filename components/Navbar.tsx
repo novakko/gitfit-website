@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: 'Features', path: '/#features' },
+    { name: 'Home', path: '/' },
     { name: 'How To', path: '/how-to' },
     { name: 'Privacy', path: '/privacy' },
     { name: 'Pricing', path: '/pricing' },

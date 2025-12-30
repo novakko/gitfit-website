@@ -27,8 +27,8 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-semibold text-neutral-900 mb-4">Product</h3>
             <ul className="space-y-2">
-              <li><Link to="/#features" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Features</Link></li>
-              <li><Link to="/pricing" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Pricing</Link></li>
+              <li><Link to="/" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Home</Link></li>
+              <li><Link to="/pricing" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Support Us</Link></li>
               <li><Link to="/how-to" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">How To</Link></li>
               <li><Link to="/faq" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">FAQ</Link></li>
             </ul>
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-semibold text-neutral-900 mb-4">Support</h3>
             <p className="text-sm text-neutral-500 mb-4">Questions or feedback? Reach out to our UK-based team.</p>
-            <Link to="/contact" className="text-sm font-medium text-orange-600 hover:text-orange-700">Contact Support &rarr;</Link>
+            <Link to="/faq" className="text-sm font-medium text-orange-600 hover:text-orange-700">Contact Support &rarr;</Link>
           </div>
         </div>
 

@@ -72,12 +72,12 @@ const Home: React.FC = () => {
             <div className="relative flex justify-center lg:justify-end">
               <div className="absolute -top-20 -right-20 w-96 h-96 bg-orange-200/30 rounded-full blur-3xl"></div>
               <AppMockup 
-                imageUrl="https://picsum.photos/id/1/600/1200" 
+                imageUrl="/screenshots/dashboard.png" 
                 alt="GitFit Dashboard" 
                 className="z-10 rotate-3"
               />
               <AppMockup 
-                imageUrl="https://picsum.photos/id/2/600/1200" 
+                imageUrl="/screenshots/nutrition.png" 
                 alt="Nutrition View" 
                 className="hidden md:block absolute -left-12 bottom-12 -rotate-6 h-[500px] w-[250px] z-0 opacity-80"
               />
@@ -113,11 +113,11 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
           <h2 className="text-3xl font-bold text-neutral-900">Beautifully Simple.</h2>
         </div>
-        <div className="flex overflow-x-auto pb-12 space-x-8 px-8 no-scrollbar scroll-smooth">
-          {/* In a real app, these would be the actual screenshots provided by the user */}
-          <AppMockup imageUrl="https://picsum.photos/id/3/600/1200" alt="Workouts" className="flex-shrink-0 scale-90" />
-          <AppMockup imageUrl="https://picsum.photos/id/4/600/1200" alt="Progress Charts" className="flex-shrink-0 scale-100" />
-          <AppMockup imageUrl="https://picsum.photos/id/5/600/1200" alt="Daily Check-In" className="flex-shrink-0 scale-90" />
+        <div className="flex overflow-x-auto pb-12 space-x-8 px-8 no-scrollbar scroll-smooth justify-center">
+          <AppMockup imageUrl="/screenshots/dashboard.png" alt="Dashboard" className="flex-shrink-0 scale-90" />
+          <AppMockup imageUrl="/screenshots/progress-habits.png" alt="Progress - Daily Habits" className="flex-shrink-0 scale-100" />
+          <AppMockup imageUrl="/screenshots/nutrition.png" alt="Nutrition Tracking" className="flex-shrink-0 scale-90" />
+          <AppMockup imageUrl="/screenshots/progress-data.png" alt="Progress - Data" className="flex-shrink-0 scale-90" />
         </div>
       </section>
 

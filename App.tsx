@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import HowTo from './pages/HowTo';
 import FAQ from './pages/FAQ';
 import Pricing from './pages/Pricing';
@@ -28,6 +29,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
             <Route path="/how-to" element={<HowTo />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/pricing" element={<Pricing />} />

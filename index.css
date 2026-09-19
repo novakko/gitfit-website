@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-neon-bg text-white font-sans antialiased;
+  }
+}
+
+@layer components {
+  .glass-dark {
+    background: rgba(13, 13, 26, 0.78);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .neon-card {
+    @apply bg-neon-surface/70 border border-neon-line rounded-neon;
+  }
+  .glow-blob {
+    @apply absolute rounded-full pointer-events-none;
+    filter: blur(90px);
+    opacity: 0.35;
+  }
+}

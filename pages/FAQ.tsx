@@ -1,26 +1,28 @@
-
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Send, X, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ChevronDown, ChevronUp, Send, X, CheckCircle, Mail } from 'lucide-react';
+import { SITE } from '../config';
 
 interface FAQItemProps {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="border-b border-neutral-100 last:border-0">
+    <div className="border-b border-neon-line last:border-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-6 text-left"
+        className="w-full flex items-center justify-between py-6 text-left gap-4"
+        aria-expanded={isOpen}
       >
-        <span className="text-lg font-semibold text-neutral-900">{question}</span>
-        {isOpen ? <ChevronUp className="text-neutral-400" /> : <ChevronDown className="text-neutral-400" />}
+        <span className="text-lg font-semibold text-white">{question}</span>
+        {isOpen ? <ChevronUp className="text-neon-cyan shrink-0" /> : <ChevronDown className="text-neon-muted shrink-0" />}
       </button>
       {isOpen && (
         <div className="pb-6">
-          <p className="text-neutral-600 leading-relaxed text-base">{answer}</p>
+          <div className="text-neon-muted leading-relaxed text-base">{answer}</div>
         </div>
       )}
     </div>
@@ -33,46 +35,59 @@ const FAQ: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const faqs = [
+  const faqs: FAQItemProps[] = [
     {
-      question: "Is GitFit available on Android?",
-      answer: "Currently, GitFit is exclusive to iOS to provide the deepest possible integration with HealthKit and Apple's native security features."
+      question: 'Is GitFit really free?',
+      answer:
+        'Yes — fully free. No subscriptions, no locked features, and no ads. Just results. Download it and use everything.',
     },
     {
-      question: "How does the HealthKit integration work?",
-      answer: "GitFit reads data like weight, steps, and active calories from Apple Health and displays them in your dashboard. You can also write workout data back to Apple Health to close your rings."
+      question: 'Which devices does GitFit support?',
+      answer:
+        'GitFit is available on iPhone, iOS 16 or later. The app is built with Flutter, and syncs health data through Apple Health.',
     },
     {
-      question: "Can I export my data?",
-      answer: "Yes. You own your data. We provide a JSON export feature in the settings so you can take your logs elsewhere if you ever choose to."
+      question: 'Do I need an account?',
+      answer:
+        'No account is required. Everything works offline, stored on your device. If you want cloud sync and backup, you can optionally create an account — backups are encrypted with AES-256, and deleting your account removes your server data within 30 days.',
     },
     {
-      question: "Is there a monthly subscription?",
-      answer: "No. We believe in ownership. The app is free to use. If you want to support development, there's a one-time Supporter purchase available."
+      question: 'How does Apple Health sync work?',
+      answer:
+        'With your permission, GitFit reads steps, weight, sleep and energy data from Apple Health. To save battery, automatic syncing runs in two windows: morning (05:00–10:59) and evening (19:00–23:59). You can always sync manually.',
     },
     {
-      question: "Does the food database support UK products?",
-      answer: "Yes, we prioritize OpenFoodFacts data and specific UK government nutritional databases to ensure accuracy for our UK and EU users."
+      question: 'Does GitFit work offline?',
+      answer:
+        'Yes — GitFit is offline-first. Your workouts, meals, check-ins and progress live in an on-device database. You only need a connection for optional cloud sync, food-database lookups and the App Store.',
     },
     {
-      question: "How do I delete my account?",
-      answer: "If you've created a cloud-synced account, you can find the 'Delete Account' option at the bottom of the Settings tab. This will permanently remove your data from our Supabase servers."
-    }
+      question: 'Can I export my data?',
+      answer:
+        'Yes. You own your data. Export everything as JSON anytime from Settings — and delete it anytime, on the device or from the cloud.',
+    },
+    {
+      question: 'How do I delete my data?',
+      answer:
+        "Locally: delete the app and your data goes with it. For cloud accounts, use Settings → Privacy & Data → Delete Account — your data is permanently removed from our Supabase servers within 30 days.",
+    },
+    {
+      question: 'What is included in the workout library?',
+      answer:
+        '400 exercises with photos and instructions, 17 authored workout templates ("The Iron Standard", "The Booty Blueprint" and more), adaptive programs, and challenges — with more added through updates.',
+    },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Create mailto link with form data
-    const mailtoLink = `mailto:support@gitfit.health?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+
+    const mailtoLink = `mailto:${SITE.supportEmail}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )}`;
-    
-    // Open mail client
+
     window.location.href = mailtoLink;
-    
-    // Show success state after a brief delay
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -85,113 +100,119 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen pt-24 pb-32">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="mb-16 text-center">
-          <h1 className="text-4xl font-extrabold text-neutral-900 mb-4 tracking-tight">Frequently Asked Questions</h1>
-          <p className="text-lg text-neutral-500">Got questions? We've got answers.</p>
+    <div className="min-h-screen pt-24 pb-32 relative overflow-hidden">
+      <div className="glow-blob w-[400px] h-[400px] bg-neon-purple -top-32 -right-32"></div>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 relative">
+        <header className="mb-14 text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Frequently Asked Questions</h1>
+          <p className="text-lg text-neon-muted">Got questions? We've got answers.</p>
         </header>
 
-        <div className="bg-neutral-50 rounded-[2.5rem] px-8 py-4 border border-neutral-100 shadow-sm">
+        <div className="neon-card shadow-glow-card px-8 py-4">
           {faqs.map((faq, i) => (
             <FAQItem key={i} question={faq.question} answer={faq.answer} />
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-neutral-500 mb-4">Still have a question?</p>
-          <button 
+        <div className="mt-14 text-center">
+          <p className="text-neon-muted mb-4">Still have a question?</p>
+          <button
             onClick={() => setShowContactForm(true)}
-            className="inline-block bg-orange-600 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-700 transition-colors"
+            className="inline-flex items-center gap-2 bg-cta-gradient shadow-glow-cta text-white px-8 py-3 rounded-full font-bold hover:scale-[1.03] transition-transform"
           >
+            <Mail className="w-5 h-5" />
             Contact Support
           </button>
         </div>
       </div>
 
-      {/* Contact Form Modal */}
+      {/* Contact Form Modal — opens the visitor's mail client (static hosting, no backend) */}
       {showContactForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-3xl max-w-lg w-full p-8 relative shadow-2xl">
-            <button 
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="neon-card bg-neon-surface max-w-lg w-full p-8 relative shadow-glow-active">
+            <button
               onClick={() => {
                 setShowContactForm(false);
                 setIsSubmitted(false);
                 setFormData({ name: '', email: '', subject: '', message: '' });
               }}
-              className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-600 transition-colors"
+              className="absolute top-4 right-4 text-neon-muted hover:text-white transition-colors"
+              aria-label="Close"
             >
               <X className="w-6 h-6" />
             </button>
 
             {isSubmitted ? (
               <div className="text-center py-8">
-                <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-neutral-900 mb-2">Message Ready!</h3>
-                <p className="text-neutral-600">Your email client should open with the message. If not, email us directly at support@gitfit.health</p>
+                <CheckCircle className="w-16 h-16 text-neon-lime mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-white mb-2">Message Ready!</h3>
+                <p className="text-neon-muted">
+                  Your email client should open with the message. If not, email us directly at{' '}
+                  <a href={`mailto:${SITE.supportEmail}`} className="text-neon-cyan underline">{SITE.supportEmail}</a>
+                </p>
               </div>
             ) : (
               <>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-2">Contact Support</h2>
-                <p className="text-neutral-500 mb-6">We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
-                
+                <h2 className="text-2xl font-bold text-white mb-2">Contact Support</h2>
+                <p className="text-neon-muted mb-6">Fill out the form below — it opens your email app with everything pre-filled. Nothing is sent through a web server.</p>
+
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-1">Name</label>
+                    <label htmlFor="faq-name" className="block text-sm font-medium text-neon-muted mb-1">Name</label>
                     <input
                       type="text"
-                      id="name"
+                      id="faq-name"
                       required
                       value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all"
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-neon bg-neon-bg border border-neon-line focus:border-neon-purple outline-none transition-colors text-white"
                       placeholder="Your name"
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-1">Email</label>
+                    <label htmlFor="faq-email" className="block text-sm font-medium text-neon-muted mb-1">Email</label>
                     <input
                       type="email"
-                      id="email"
+                      id="faq-email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all"
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-neon bg-neon-bg border border-neon-line focus:border-neon-purple outline-none transition-colors text-white"
                       placeholder="you@example.com"
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-neutral-700 mb-1">Subject</label>
+                    <label htmlFor="faq-subject" className="block text-sm font-medium text-neon-muted mb-1">Subject</label>
                     <input
                       type="text"
-                      id="subject"
+                      id="faq-subject"
                       required
                       value={formData.subject}
-                      onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all"
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      className="w-full px-4 py-3 rounded-neon bg-neon-bg border border-neon-line focus:border-neon-purple outline-none transition-colors text-white"
                       placeholder="How can we help?"
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-1">Message</label>
+                    <label htmlFor="faq-message" className="block text-sm font-medium text-neon-muted mb-1">Message</label>
                     <textarea
-                      id="message"
+                      id="faq-message"
                       required
                       rows={4}
                       value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all resize-none"
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full px-4 py-3 rounded-neon bg-neon-bg border border-neon-line focus:border-neon-purple outline-none transition-colors text-white resize-none"
                       placeholder="Tell us more about your question or issue..."
                     />
                   </div>
-                  
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-orange-400 text-white py-3 px-6 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all"
+                    className="w-full bg-cta-gradient shadow-glow-cta disabled:opacity-60 text-white py-3 px-6 rounded-full font-bold flex items-center justify-center gap-2 transition-all"
                   >
                     {isSubmitting ? (
                       <span>Opening mail...</span>
@@ -203,15 +224,20 @@ const FAQ: React.FC = () => {
                     )}
                   </button>
                 </form>
-                
-                <p className="text-center text-sm text-neutral-400 mt-4">
-                  Or email us directly at <a href="mailto:support@gitfit.health" className="text-orange-600 underline">support@gitfit.health</a>
+
+                <p className="text-center text-sm text-neon-muted mt-4">
+                  Or email us directly at{' '}
+                  <a href={`mailto:${SITE.supportEmail}`} className="text-neon-cyan underline">{SITE.supportEmail}</a>
                 </p>
               </>
             )}
           </div>
         </div>
       )}
+
+      <div className="text-center mt-14">
+        <Link to="/how-to" className="text-neon-cyan hover:underline">New to GitFit? Read the getting-started guide →</Link>
+      </div>
     </div>
   );
 };

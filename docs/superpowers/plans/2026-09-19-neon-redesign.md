@@ -33,13 +33,13 @@
 - Create: `config.ts` (repo root — full content below)
 - Delete: `public/screenshots/main_screen.png`, `public/screenshots/data_charts.png` (stale 3.4 MB, untracked — remove now so they never enter history)
 
-- [ ] **Step 1: Branch** `cd ~/Repo/gitfit-website && git checkout fix_index && git checkout -b neon-redesign`
-- [ ] **Step 2: Store screenshots** — `curl -s "https://itunes.apple.com/lookup?bundleId=com.gitfit.app.gitfitFlutter&country=us"`, take `results[0].screenshotUrls`, for each replace suffix `320x480bb.jpg`→`600x0w.jpg` and save in index order: **0=dashboard, 1=workouts, 2=workout-detail, 3=progress, 4=checkin, 5=nutrition, 6=challenges, 7=program** (NOTE: 3/6 mapping per visual verification).
-- [ ] **Step 3: Icons from app logo** (source `~/Repo/gitfit-progress-power/logo.png`, 1024², read-only): `sips -z 32 32` → `favicon.png`; `sips -z 180 180` → `apple-touch-icon.png`; `sips -z 512 512` → `icon-512.png` into `public/icons/`.
-- [ ] **Step 4: OG image (explicit recipe)** — `cp public/screenshots/store/dashboard.jpg /tmp/og.jpg && sips --resampleWidth 1200 /tmp/og.jpg && sips -c 630 1200 /tmp/og.jpg && cp /tmp/og.jpg public/images/og-image.jpg` (center band of dashboard shot; accept the crop — verified feasible; logo-composite option dropped, sips cannot composite).
-- [ ] **Step 5: Badges (resize, gate ≤200 KB)** — copy the 4 PNGs from `gitfit_flutter/assets/badges/`, then `sips -Z 220 <file>` (longest side 220 ≈ 2× display size); verify with `ls -la` each ≤200 KB.
-- [ ] **Step 6: Program heroes** — copy the 4 JPGs from `gitfit_flutter/assets/images/workout_background/` unchanged (~600×803).
-- [ ] **Step 7: `config.ts`** (repo root):
+- [x] **Step 1: Branch** `cd ~/Repo/gitfit-website && git checkout fix_index && git checkout -b neon-redesign`
+- [x] **Step 2: Store screenshots** — `curl -s "https://itunes.apple.com/lookup?bundleId=com.gitfit.app.gitfitFlutter&country=us"`, take `results[0].screenshotUrls`, for each replace suffix `320x480bb.jpg`→`600x0w.jpg` and save in index order: **0=dashboard, 1=workouts, 2=workout-detail, 3=progress, 4=checkin, 5=nutrition, 6=challenges, 7=program** (NOTE: 3/6 mapping per visual verification).
+- [x] **Step 3: Icons from app logo** (source `~/Repo/gitfit-progress-power/logo.png`, 1024², read-only): `sips -z 32 32` → `favicon.png`; `sips -z 180 180` → `apple-touch-icon.png`; `sips -z 512 512` → `icon-512.png` into `public/icons/`.
+- [x] **Step 4: OG image (explicit recipe)** — `cp public/screenshots/store/dashboard.jpg /tmp/og.jpg && sips --resampleWidth 1200 /tmp/og.jpg && sips -c 630 1200 /tmp/og.jpg && cp /tmp/og.jpg public/images/og-image.jpg` (center band of dashboard shot; accept the crop — verified feasible; logo-composite option dropped, sips cannot composite).
+- [x] **Step 5: Badges (resize, gate ≤200 KB)** — copy the 4 PNGs from `gitfit_flutter/assets/badges/`, then `sips -Z 220 <file>` (longest side 220 ≈ 2× display size); verify with `ls -la` each ≤200 KB.
+- [x] **Step 6: Program heroes** — copy the 4 JPGs from `gitfit_flutter/assets/images/workout_background/` unchanged (~600×803).
+- [x] **Step 7: `config.ts`** (repo root):
 
 ```ts
 export const SITE = {
@@ -54,8 +54,8 @@ export const SITE = {
 } as const;
 ```
 
-- [ ] **Step 8: Verify** `ls public/screenshots/store` = 8 files ~95–160 KB each at 600×1298 (`sips -g pixelWidth -g pixelHeight` on one); `npm run build` green (assets not yet referenced).
-- [ ] **Step 9: Commit (explicit paths)** `git add config.ts public/screenshots/store public/icons public/images && git rm --cached --ignore-unmatch public/screenshots/main_screen.png public/screenshots/data_charts.png 2>/dev/null; git commit -m "chore: verified store assets, icons, program imagery, site config"`
+- [x] **Step 8: Verify** `ls public/screenshots/store` = 8 files ~95–160 KB each at 600×1298 (`sips -g pixelWidth -g pixelHeight` on one); `npm run build` green (assets not yet referenced).
+- [x] **Step 9: Commit (explicit paths)** `git add config.ts public/screenshots/store public/icons public/images && git rm --cached --ignore-unmatch public/screenshots/main_screen.png public/screenshots/data_charts.png 2>/dev/null; git commit -m "chore: verified store assets, icons, program imagery, site config"`
 
 ### Task 2: Neon token layer (npm Tailwind + root index.css + index.html)
 
@@ -64,8 +64,8 @@ export const SITE = {
 - Create: `tailwind.config.js`, `postcss.config.js`, `index.css` (repo root, next to index.tsx)
 - Rewrite: `index.html` (meta/OG/favicon/theme-color; **remove** CDN `<script>` and the inline `<style>` block — `.glass` consumer Navbar is rewritten in Task 3, `.app-shadow` has zero consumers, body font/bg superseded by preflight + fontFamily.sans)
 
-- [ ] **Step 1: install** `npm install -D tailwindcss@^3.4 postcss autoprefixer`
-- [ ] **Step 2: `tailwind.config.js`**
+- [x] **Step 1: install** `npm install -D tailwindcss@^3.4 postcss autoprefixer`
+- [x] **Step 2: `tailwind.config.js`**
 
 ```js
 /** @type {import('tailwindcss').Config} */
@@ -102,8 +102,8 @@ export default {
 }
 ```
 
-- [ ] **Step 3: `postcss.config.js`** `export default { plugins: { tailwindcss: {}, autoprefixer: {} } }`
-- [ ] **Step 4: `index.css`** (root):
+- [x] **Step 3: `postcss.config.js`** `export default { plugins: { tailwindcss: {}, autoprefixer: {} } }`
+- [x] **Step 4: `index.css`** (root):
 
 ```css
 @tailwind base;
@@ -121,10 +121,10 @@ export default {
 }
 ```
 
-- [ ] **Step 5: `index.tsx`** — add `import './index.css';` **as the first import** (this is the Task 1-review blocker fix; without it no CSS is ever compiled).
-- [ ] **Step 6: `index.html`** — title `GitFit — Your gym. Your rules. Your data.`; meta description: "Training is hard enough—tracking it shouldn't be. GitFit is the offline-first strength & nutrition tracker that lives on your phone. No account required. No ads. Free."; canonical `https://gitfit.health/`; OG (`og:title`, `og:description`, `og:type=website`, `og:url`, `og:image=/images/og-image.jpg`, `twitter:card=summary_large_image`); favicon `<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon.png">` + `apple-touch-icon` 180; `<meta name="theme-color" content="#0D0D1A">`; keep Inter Google-Fonts links; keep `<div id="root">` + module script.
-- [ ] **Step 7: Verify** `npm run build && npx tsc --noEmit` green; **`ls dist/assets/*.css` exists (load-bearing check)**; `grep -c "cdn.tailwindcss" dist/index.html` = 0.
-- [ ] **Step 8: Commit** `git add package.json package-lock.json vite.config.ts index.html index.tsx index.css tailwind.config.js postcss.config.js && git commit -m "feat: neon token layer — npm tailwind, meta/OG, css entry"`
+- [x] **Step 5: `index.tsx`** — add `import './index.css';` **as the first import** (this is the Task 1-review blocker fix; without it no CSS is ever compiled).
+- [x] **Step 6: `index.html`** — title `GitFit — Your gym. Your rules. Your data.`; meta description: "Training is hard enough—tracking it shouldn't be. GitFit is the offline-first strength & nutrition tracker that lives on your phone. No account required. No ads. Free."; canonical `https://gitfit.health/`; OG (`og:title`, `og:description`, `og:type=website`, `og:url`, `og:image=/images/og-image.jpg`, `twitter:card=summary_large_image`); favicon `<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon.png">` + `apple-touch-icon` 180; `<meta name="theme-color" content="#0D0D1A">`; keep Inter Google-Fonts links; keep `<div id="root">` + module script.
+- [x] **Step 7: Verify** `npm run build && npx tsc --noEmit` green; **`ls dist/assets/*.css` exists (load-bearing check)**; `grep -c "cdn.tailwindcss" dist/index.html` = 0.
+- [x] **Step 8: Commit** `git add package.json package-lock.json vite.config.ts index.html index.tsx index.css tailwind.config.js postcss.config.js && git commit -m "feat: neon token layer — npm tailwind, meta/OG, css entry"`
 
 ### Task 3: Shared components
 
@@ -136,12 +136,12 @@ export default {
 - `SectionHeading({eyebrow, title, sub?, id?}: {...})` — eyebrow `text-neon-cyan uppercase tracking-widest text-sm font-semibold`; title `text-3xl md:text-5xl font-extrabold tracking-tight`; sub `text-neon-muted`.
 - `SITE` from root `config.ts` (`import { SITE } from '../config'`).
 
-- [ ] **Step 1: PhoneFrame.tsx** (per interface; static markup, no state).
-- [ ] **Step 2: Navbar.tsx** — fixed top, `h-16 glass-dark border-b border-neon-line/60` (height pinned — main is `pt-16`); logo: `bg-brand-orange` rounded-lg box w/ white `Dumbbell` icon + "GitFit" bold white; links: Home `/`, How To `/how-to`, FAQ `/faq`, Contact `/contact` (NavLink active = `text-neon-cyan`); CTA pill `bg-cta-gradient` "Get GitFit" → `SITE.appStoreUrl` (target blank); mobile hamburger with same links; **all internal links are `<Link>`/`<NavLink>`, zero raw `#`**.
-- [ ] **Step 3: Footer.tsx** — `border-t border-neon-line bg-neon-bg`; brand col: logo + "Privacy-first strength training. Your data stays yours."; Product: Home, How To, FAQ, Contact (Links); Legal: Privacy Policy `/privacy`, Terms `/terms`; Connect: `mailto:SITE.supportEmail` (Mail icon) + Instagram `https://instagram.com/gitfit.app` (carry-over; Task 8 verifies reachable, drop if dead); bottom bar: `© {year} {SITE.appName} · Free. Private. Powerful.` + "Made for iPhone · iOS 16+".
-- [ ] **Step 4: CTAButton.tsx + SectionHeading.tsx** (per interfaces).
-- [ ] **Step 5: Verify** `npm run build && npx tsc --noEmit` green (components may be unused-yet; no unused-import errors).
-- [ ] **Step 6: Commit** explicit paths.
+- [x] **Step 1: PhoneFrame.tsx** (per interface; static markup, no state).
+- [x] **Step 2: Navbar.tsx** — fixed top, `h-16 glass-dark border-b border-neon-line/60` (height pinned — main is `pt-16`); logo: `bg-brand-orange` rounded-lg box w/ white `Dumbbell` icon + "GitFit" bold white; links: Home `/`, How To `/how-to`, FAQ `/faq`, Contact `/contact` (NavLink active = `text-neon-cyan`); CTA pill `bg-cta-gradient` "Get GitFit" → `SITE.appStoreUrl` (target blank); mobile hamburger with same links; **all internal links are `<Link>`/`<NavLink>`, zero raw `#`**.
+- [x] **Step 3: Footer.tsx** — `border-t border-neon-line bg-neon-bg`; brand col: logo + "Privacy-first strength training. Your data stays yours."; Product: Home, How To, FAQ, Contact (Links); Legal: Privacy Policy `/privacy`, Terms `/terms`; Connect: `mailto:SITE.supportEmail` (Mail icon) + Instagram `https://instagram.com/gitfit.app` (carry-over; Task 8 verifies reachable, drop if dead); bottom bar: `© {year} {SITE.appName} · Free. Private. Powerful.` + "Made for iPhone · iOS 16+".
+- [x] **Step 4: CTAButton.tsx + SectionHeading.tsx** (per interfaces).
+- [x] **Step 5: Verify** `npm run build && npx tsc --noEmit` green (components may be unused-yet; no unused-import errors).
+- [x] **Step 6: Commit** explicit paths.
 
 ### Task 4: Home page (neon)
 

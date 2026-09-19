@@ -49,7 +49,7 @@ const FAQ: React.FC = () => {
     {
       question: 'Do I need an account?',
       answer:
-        'No account is required. Everything works offline, stored on your device. If you want cloud sync and backup, you can optionally create an account — backups are encrypted with AES-256, and deleting your account removes your server data within 30 days.',
+        'No. There is no sign-up and no sign-in. GitFit works fully offline and all your data stays on your device — install it and start lifting.',
     },
     {
       question: 'How does Apple Health sync work?',
@@ -69,7 +69,7 @@ const FAQ: React.FC = () => {
     {
       question: 'How do I delete my data?',
       answer:
-        "Locally: delete the app and your data goes with it. For cloud accounts, use Settings → Privacy & Data → Delete Account — your data is permanently removed from our Supabase servers within 30 days.",
+        'Your data lives only on your device. Delete everything via Settings → Privacy & Data, or simply uninstall the app. Depending on your device settings, data may persist in device-level backups (e.g., iCloud) until those are overwritten.',
     },
     {
       question: 'What is included in the workout library?',

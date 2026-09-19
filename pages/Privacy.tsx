@@ -14,7 +14,7 @@ const Privacy: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight text-center">GitFit Privacy Policy</h1>
-          <p className="text-lg text-neon-muted text-center"><strong className="text-white">Last Updated:</strong> 30 December 2025 &nbsp;|&nbsp; <strong className="text-white">Effective Date:</strong> 30 December 2025</p>
+          <p className="text-lg text-neon-muted text-center"><strong className="text-white">Last Updated:</strong> 19 September 2026 &nbsp;|&nbsp; <strong className="text-white">Effective Date:</strong> 19 September 2026</p>
         </header>
 
         <div className="max-w-none">
@@ -22,53 +22,29 @@ const Privacy: React.FC = () => {
 
           <h2 className={h2}>Introduction</h2>
           <p className={p}>
-            Welcome to GitFit ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a positive experience when using our fitness tracking application ("App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use GitFit.
+            Welcome to GitFit ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a positive experience when using our fitness tracking application ("App"). This Privacy Policy explains how we handle your information when you use GitFit.
           </p>
           <p className={p}>
-            By downloading, installing, or using GitFit, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use the App.
+            By downloading, installing, or using GitFit, you agree to the practices described in this policy. If you do not agree with our policies and practices, please do not use the App.
           </p>
 
           <hr className="my-8 border-neon-line" />
 
-          <h2 className={h2}>Data Storage and Localization</h2>
-          <p className={p}><strong className="text-white">Local-first by design (with cloud features when you choose to use them).</strong></p>
-          <p className={p}>We have designed GitFit with a "Local-First" privacy architecture.</p>
+          <h2 className={h2}>Local-First by Design</h2>
+          <p className={p}><strong className="text-white">Your data lives on your device. There are no GitFit accounts and no GitFit servers holding your training data.</strong></p>
           <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">On-device data (offline-first):</strong> GitFit stores your workout history, nutrition logs, daily check-ins, and progress photos locally (SQLite and on-device storage) so the app continues to work offline.</li>
-            <li className={li}><strong className="text-white">Apple Health (HealthKit) reads:</strong> When you grant permission, GitFit reads supported HealthKit metrics (e.g., weight, steps, sleep, resting heart rate) to display insights and to populate your on-device daily check-ins.</li>
-            <li className={li}><strong className="text-white">Cloud account &amp; sync (Supabase):</strong> If you sign in, GitFit uses Supabase for authentication and (depending on your settings and features you use) to sync/backup selected app data to your account so it can be restored and used across devices. <strong className="text-white">Some cloud features (such as cloud backup) may require a "Support Developer" purchase.</strong></li>
+            <li className={li}><strong className="text-white">On-device storage (offline-first):</strong> GitFit stores your workout history, nutrition logs, daily check-ins, and progress photos locally on your device (SQLite and on-device storage), so the app works fully offline.</li>
+            <li className={li}><strong className="text-white">No account required:</strong> There is no sign-up and no sign-in. GitFit works the moment you install it.</li>
+            <li className={li}><strong className="text-white">Apple Health (HealthKit) reads:</strong> When you grant permission, GitFit reads supported HealthKit metrics (e.g., weight, steps, sleep, resting heart rate) to display insights and populate your daily check-ins. This data stays on your device.</li>
           </ul>
 
-          <h2 className={h2}>Payment and Subscriptions</h2>
-          <p className={p}>GitFit is free to use.</p>
-          <p className={p}>We also offer an <strong className="text-white">optional one-time in-app purchase</strong> (via Apple's App Store) for users who like the app and want to support the developer.</p>
-          <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">No Subscriptions / No Free Trial:</strong> GitFit does not offer subscriptions or a free trial.</li>
-            <li className={li}><strong className="text-white">Support Developer (One-time):</strong> A one-off purchase may be available as a "Support Developer" / "Supporter" purchase. This is optional and does not affect basic access to the App.</li>
-            <li className={li}><strong className="text-white">Payment Processing:</strong> Apple processes payments. We do not receive or store your card details.</li>
-            <li className={li}><strong className="text-white">Receipt Verification:</strong> To confirm a purchase, the app sends an App Store receipt payload and transaction identifiers to our backend for verification.</li>
-          </ul>
+          <h2 className={h2}>Price</h2>
+          <p className={p}>GitFit is fully free. There are no subscriptions, no in-app purchases, and no ads.</p>
 
-          <h2 className={h2}>Data We Collect</h2>
-          <p className={p}>We collect the following categories of data:</p>
+          <h2 className={h2}>Data We Handle</h2>
+          <p className={p}>GitFit keeps everything on your device. The following categories of data exist only there, unless you export or share them yourself:</p>
 
-          <h3 className={h3}>1. Account Information (Stored on Server)</h3>
-          <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">Email Address:</strong> Required for account creation and account management.</li>
-            <li className={li}><strong className="text-white">User ID:</strong> A unique identifier to manage your account and (if you choose to purchase it) your supporter/entitlement status.</li>
-            <li className={li}><strong className="text-white">Password (if you use email/password sign-in):</strong> Managed by our authentication provider (Supabase Auth). We do not store your plaintext password.</li>
-          </ul>
-
-          <h3 className={h3}>2. Purchase &amp; Supporter/Entitlement Information (Stored on Server)</h3>
-          <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">Purchase Receipt Data:</strong> Receipt payload sent by the app for verification.</li>
-            <li className={li}><strong className="text-white">Transaction Identifiers:</strong> Transaction ID / original transaction ID.</li>
-            <li className={li}><strong className="text-white">Cryptographic Purchase Signatures:</strong> Apple-signed transaction data (JWS format) for cryptographic verification of purchases.</li>
-            <li className={li}><strong className="text-white">Supporter / Entitlement Status:</strong> Whether your account has a verified supporter purchase (or other entitlement).</li>
-            <li className={li}><strong className="text-white">Refund/Revocation Status:</strong> If you receive a refund from Apple, the app automatically detects and processes this, revoking supporter access.</li>
-          </ul>
-
-          <h3 className={h3}>3. Health and Fitness Data</h3>
+          <h3 className={h3}>1. Health and Fitness Data</h3>
           <p className={p}>With your explicit permission, the App reads the following data from Apple Health to display insights and populate on-device logs:</p>
           <ul className="list-disc pl-6 space-y-2 mb-4">
             <li className={li}><strong className="text-white">Weight</strong></li>
@@ -79,22 +55,20 @@ const Privacy: React.FC = () => {
             <li className={li}><strong className="text-white">Sleep Data</strong> (Asleep, Deep Sleep, Light Sleep, REM Sleep)</li>
             <li className={li}><strong className="text-white">Resting Heart Rate</strong></li>
           </ul>
-          <p className={p}>If you enable cloud sync/backup features, some of the resulting fitness metrics you choose to store in GitFit (for example, daily check-ins) may be synced to your account.</p>
 
-          <h3 className={h3}>4. Photos and Media</h3>
+          <h3 className={h3}>2. Photos and Media</h3>
           <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">Progress Photos:</strong> Stored locally on your device.</li>
-            <li className={li}><strong className="text-white">Optional synced photos:</strong> If you attach photos to app data that is configured to sync/backup, GitFit may store a copy (or a link) in cloud storage associated with your account.</li>
+            <li className={li}><strong className="text-white">Progress Photos:</strong> Stored locally on your device and never uploaded anywhere.</li>
           </ul>
 
-          <h3 className={h3}>5. Nutrition &amp; Workout Data</h3>
+          <h3 className={h3}>3. Nutrition &amp; Workout Data</h3>
           <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">Food Logs, Meals, and Workouts:</strong> Stored locally for offline use. Depending on features/settings you use, meals and workouts may also be synced to your cloud account.</li>
+            <li className={li}><strong className="text-white">Food Logs, Meals, and Workouts:</strong> Stored locally for offline use.</li>
           </ul>
 
           <hr className="my-8 border-neon-line" />
 
-          <h2 className={h2}>How We Use Your Data</h2>
+          <h2 className={h2}>How Your Data Is Used</h2>
           <div className="overflow-x-auto mb-4">
             <table className="w-full border-collapse text-sm my-4">
               <thead>
@@ -106,29 +80,19 @@ const Privacy: React.FC = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td className={td}><strong className="text-white">Account &amp; Entitlement</strong></td>
-                  <td className={td}>Email, User ID, supporter/entitlement status</td>
-                  <td className={td}><strong className="text-white">Cloud (Supabase)</strong></td>
-                </tr>
-                <tr>
                   <td className={td}><strong className="text-white">Fitness Tracking</strong></td>
                   <td className={td}>HealthKit reads; daily check-ins; workouts</td>
-                  <td className={td}><strong className="text-white">On-device</strong> (and optional cloud sync for selected data)</td>
+                  <td className={td}><strong className="text-white">On-device only</strong></td>
                 </tr>
                 <tr>
                   <td className={td}><strong className="text-white">Progress Photos</strong></td>
                   <td className={td}>Photos</td>
-                  <td className={td}><strong className="text-white">On-device</strong> (and optional cloud sync for selected data)</td>
+                  <td className={td}><strong className="text-white">On-device only</strong></td>
                 </tr>
                 <tr>
                   <td className={td}><strong className="text-white">Nutrition Tracking</strong></td>
                   <td className={td}>Meals, foods, nutrition targets</td>
-                  <td className={td}><strong className="text-white">On-device</strong> (and optional cloud sync for selected data)</td>
-                </tr>
-                <tr>
-                  <td className={td}><strong className="text-white">Purchase Verification</strong></td>
-                  <td className={td}>Receipt payload, transaction identifiers</td>
-                  <td className={td}><strong className="text-white">Cloud (Supabase Edge Function + database)</strong></td>
+                  <td className={td}><strong className="text-white">On-device only</strong></td>
                 </tr>
               </tbody>
             </table>
@@ -144,33 +108,13 @@ const Privacy: React.FC = () => {
           <hr className="my-8 border-neon-line" />
 
           <h2 className={h2}>Third-Party Services</h2>
-          <p className={p}>We use the following third-party services to operate GitFit:</p>
-
-          <h3 className={h3}>Supabase (Backend &amp; Authentication)</h3>
-          <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">Purpose:</strong> Cloud database, user authentication, data synchronization.</li>
-            <li className={li}><strong className="text-white">Data Shared:</strong> Account information (email, user ID), supporter/entitlement status, and (when features/settings require) synced app data such as workouts, meals, nutrition targets, and daily logs.</li>
-            <li className={li}><strong className="text-white">Privacy Policy:</strong> <a href="https://supabase.com/privacy" target="_blank" rel="noopener" className="text-neon-cyan underline">https://supabase.com/privacy</a></li>
-          </ul>
+          <p className={p}>GitFit integrates with the following third-party services:</p>
 
           <h3 className={h3}>OpenFoodFacts API</h3>
           <ul className="list-disc pl-6 space-y-2 mb-4">
             <li className={li}><strong className="text-white">Purpose:</strong> Food and nutrition database lookups via barcode scanning.</li>
-            <li className={li}><strong className="text-white">Data Shared:</strong> Barcode numbers and (if you use search) food search queries. We do not send your account email/password to OpenFoodFacts.</li>
+            <li className={li}><strong className="text-white">Data Shared:</strong> Barcode numbers and (if you use search) food search queries. These lookups are not linked to you — no account, device identifier, or personal data is sent.</li>
             <li className={li}><strong className="text-white">Privacy Policy:</strong> <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener" className="text-neon-cyan underline">https://world.openfoodfacts.org/privacy</a></li>
-          </ul>
-
-          <h3 className={h3}>Apple Sign-In (Optional)</h3>
-          <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">Purpose:</strong> Secure social login using your Apple ID.</li>
-            <li className={li}><strong className="text-white">Data Shared:</strong> Apple-provided relay email (your real email is never shared with us).</li>
-            <li className={li}><strong className="text-white">Privacy Policy:</strong> <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener" className="text-neon-cyan underline">https://www.apple.com/legal/privacy/</a></li>
-          </ul>
-
-          <h3 className={h3}>Apple App Store / StoreKit (Purchases)</h3>
-          <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">Purpose:</strong> In-app purchase processing and purchase restoration.</li>
-            <li className={li}><strong className="text-white">Data Shared:</strong> Apple processes payments. GitFit receives verified transaction identifiers and may transmit receipt payloads to our backend for verification.</li>
           </ul>
 
           <hr className="my-8 border-neon-line" />
@@ -198,7 +142,7 @@ const Privacy: React.FC = () => {
             <li className={li}><strong className="text-white">No Third-Party Disclosure for Marketing:</strong> We do NOT disclose HealthKit data to third parties for their marketing or advertising purposes.</li>
             <li className={li}><strong className="text-white">User Control:</strong> You can revoke HealthKit access at any time through your device's Settings &gt; Privacy &amp; Security &gt; Health &gt; GitFit.</li>
             <li className={li}><strong className="text-white">Minimal Data Collection:</strong> We only request access to the specific health data types necessary for the App's core fitness tracking functionality.</li>
-            <li className={li}><strong className="text-white">Data Stays on Device by Default:</strong> Health data is processed on-device. If you enable cloud sync/backup features, some of the fitness metrics you choose to store in GitFit (e.g., daily check-ins) may be synced to your account.</li>
+            <li className={li}><strong className="text-white">Data Stays on Device:</strong> Health data is processed on-device and never leaves your device through GitFit.</li>
           </ol>
 
           <h3 className={h3}>HealthKit Data We Access:</h3>
@@ -224,41 +168,30 @@ const Privacy: React.FC = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td className={td}>Account &amp; Supporter/Entitlement Data</td>
-                  <td className={td}>Until you delete your account (or as required for legal/compliance reasons)</td>
-                </tr>
-                <tr>
                   <td className={td}>On-device Health/Fitness &amp; Nutrition Data</td>
                   <td className={td}>Until you delete it in the app or uninstall the app</td>
                 </tr>
                 <tr>
-                  <td className={td}>Synced Cloud Data (if enabled/used)</td>
-                  <td className={td}>Until you delete your account and/or request deletion, subject to backup/retention windows</td>
-                </tr>
-                <tr>
-                  <td className={td}>Purchase Verification Records</td>
-                  <td className={td}>As long as necessary to confirm entitlement and, where required, meet legal/accounting obligations</td>
+                  <td className={td}>Progress Photos</td>
+                  <td className={td}>Until you delete them or uninstall the app</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h3 className={h3}>Account deletion timing</h3>
-          <p className={p}>When you delete your account (from within the App), we initiate deletion of your server-stored account data <strong className="text-white">immediately</strong>.</p>
-          <p className={p}><strong className="text-white">Important:</strong> As part of the in-app account deletion flow, GitFit also removes on-device app data stored locally (SQLite and app-stored files such as progress photos). If you need to remove on-device data without deleting your cloud account, you can delete data in the App (where available) and/or uninstall the App.</p>
-          <p className={p}>In some cases, <strong className="text-white">limited information may be retained</strong> where required by law (for example, accounting, anti-fraud, or compliance obligations). Additionally, some data may persist for a limited time in encrypted backups and operational logs before being purged according to our backup/retention windows.</p>
+          <h3 className={h3}>Deleting your data</h3>
+          <p className={p}>You can delete your data at any time from the App's Settings (Privacy &amp; Data), which removes the local database and app-stored files such as progress photos. Uninstalling the App also removes all on-device GitFit data.</p>
+          <p className={p}><strong className="text-white">Note:</strong> depending on your device settings, data may still exist in device-level backups (e.g., iCloud backups) until those backups are overwritten or deleted.</p>
 
           <hr className="my-8 border-neon-line" />
 
           <h2 className={h2}>Data Security</h2>
           <p className={p}>We implement industry-standard security measures to protect your data:</p>
           <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">Encryption in Transit:</strong> All data transmitted between the App and our servers uses TLS/SSL encryption.</li>
-            <li className={li}><strong className="text-white">Encryption at Rest (Cloud):</strong> We use reputable cloud providers (including Supabase) that support encryption at rest.</li>
             <li className={li}><strong className="text-white">On-device Storage:</strong> Your data is stored locally on your device; your device may encrypt storage depending on your device settings.</li>
-            <li className={li}><strong className="text-white">Secure Authentication:</strong> We use secure password hashing and support biometric authentication (Face ID/Touch ID).</li>
+            <li className={li}><strong className="text-white">Encryption in Transit:</strong> The App's limited network requests (e.g., food-database lookups) use TLS/SSL encryption.</li>
+            <li className={li}><strong className="text-white">Secure Authentication:</strong> Biometric authentication (Face ID/Touch ID) can lock the App.</li>
             <li className={li}><strong className="text-white">Keychain Storage:</strong> Sensitive credentials are stored in iOS Keychain for maximum security.</li>
-            <li className={li}><strong className="text-white">Transport Security:</strong> All data transmitted between the App and our servers uses TLS/SSL encryption.</li>
           </ul>
 
           <hr className="my-8 border-neon-line" />
@@ -268,13 +201,11 @@ const Privacy: React.FC = () => {
 
           <h3 className={h3}>For All Users:</h3>
           <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}><strong className="text-white">Access:</strong> Request a copy of the data we hold about you.</li>
-            <li className={li}><strong className="text-white">Correction:</strong> Request correction of inaccurate data.</li>
-            <li className={li}><strong className="text-white">Deletion:</strong> Request deletion of your account and associated data.</li>
-            <li className={li}><strong className="text-white">Data Export:</strong> Export your workout and nutrition data.</li>
+            <li className={li}><strong className="text-white">Access:</strong> All GitFit data is on your device and visible in the App.</li>
+            <li className={li}><strong className="text-white">Correction:</strong> Edit any entry in the App.</li>
+            <li className={li}><strong className="text-white">Deletion:</strong> Delete data in the App or uninstall it.</li>
+            <li className={li}><strong className="text-white">Data Export:</strong> Export your data as JSON from the App's Settings.</li>
           </ul>
-          <p className={p}><strong className="text-white">In-app controls:</strong> You can export your on-device data and delete your account from the App's Settings (Privacy &amp; Data).</p>
-          <p className={p}><strong className="text-white">Export scope:</strong> Exports include on-device data stored in SQLite (and selected app preferences). Cloud-only purchase verification records and server-side logs are not included.</p>
 
           <h3 className={h3}>For EU/EEA Residents (GDPR):</h3>
           <ul className="list-disc pl-6 space-y-2 mb-4">
@@ -303,11 +234,7 @@ const Privacy: React.FC = () => {
           <hr className="my-8 border-neon-line" />
 
           <h2 className={h2}>International Data Transfers</h2>
-          <p className={p}>Your data may be transferred to and processed in countries other than your country of residence. When we transfer data internationally, we ensure appropriate safeguards are in place, including:</p>
-          <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}>Standard Contractual Clauses (for EU data transfers)</li>
-            <li className={li}>Encryption of data in transit and at rest</li>
-          </ul>
+          <p className={p}>GitFit does not operate servers that store your data. The only outbound requests are food-database lookups to OpenFoodFacts (<a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener" className="text-neon-cyan underline">world.openfoodfacts.org</a>), which are not linked to you.</p>
 
           <hr className="my-8 border-neon-line" />
 
@@ -316,7 +243,6 @@ const Privacy: React.FC = () => {
           <ul className="list-disc pl-6 space-y-2 mb-4">
             <li className={li}>Posting the new Privacy Policy in the App</li>
             <li className={li}>Updating the "Last Updated" date at the top of this document</li>
-            <li className={li}>Sending you an email notification (for significant changes)</li>
           </ul>
           <p className={p}>We encourage you to review this Privacy Policy periodically.</p>
 
@@ -340,21 +266,16 @@ const Privacy: React.FC = () => {
           <p className={p}>GitFit does not track you across apps or websites owned by other companies for advertising purposes. Our <code className="text-neon-cyan-soft bg-neon-surface px-1.5 py-0.5 rounded">NSPrivacyTracking</code> is set to <code className="text-neon-cyan-soft bg-neon-surface px-1.5 py-0.5 rounded">false</code>.</p>
 
           <h3 className={h3}>No Tracking Domains</h3>
-          <p className={p}>We do not connect to any internet domains for tracking purposes (we do connect to internet domains for core app functionality such as login, sync, and food lookups).</p>
+          <p className={p}>We do not connect to any internet domains for tracking purposes. The only internet domains the App connects to serve core functionality such as food lookups.</p>
           <p className={p}><strong className="text-white">Core service domains (non-exhaustive):</strong></p>
           <ul className="list-disc pl-6 space-y-2 mb-4">
-            <li className={li}>Supabase project domains (e.g., <code className="text-neon-cyan-soft bg-neon-surface px-1.5 py-0.5 rounded">*.supabase.co</code>)</li>
             <li className={li}>OpenFoodFacts (<code className="text-neon-cyan-soft bg-neon-surface px-1.5 py-0.5 rounded">world.openfoodfacts.org</code>)</li>
-            <li className={li}>Apple receipt verification (<code className="text-neon-cyan-soft bg-neon-surface px-1.5 py-0.5 rounded">buy.itunes.apple.com</code>, <code className="text-neon-cyan-soft bg-neon-surface px-1.5 py-0.5 rounded">sandbox.itunes.apple.com</code>)</li>
           </ul>
-
-          <h3 className={h3}>In-App Purchases</h3>
-          <p className={p}>GitFit offers an optional one-time "Support Developer" / "Supporter" in-app purchase processed through Apple's App Store. Apple handles all payment processing; we do not have access to your payment information.</p>
 
           <hr className="my-8 border-neon-line" />
 
           <p className="text-neon-muted text-sm italic">
-            This Privacy Policy was created for GitFit, a fitness tracking application. For the most current version, please check within the App or on our website.
+            This Privacy Policy applies to GitFit, a fitness tracking application. For the most current version, please check within the App or on our website.
           </p>
         </div>
       </div>

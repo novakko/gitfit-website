@@ -8,7 +8,7 @@ const Terms: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight text-center">GitFit Terms of Service</h1>
-          <p className="text-lg text-neon-muted text-center"><strong>Last Updated:</strong> 31 December 2025 &nbsp;|&nbsp; <strong>Effective Date:</strong> 31 December 2025</p>
+          <p className="text-lg text-neon-muted text-center"><strong className="text-white">Last Updated:</strong> 19 September 2026 &nbsp;|&nbsp; <strong className="text-white">Effective Date:</strong> 19 September 2026</p>
         </header>
 
         <div className="prose prose-neutral max-w-none prose-headings:text-white prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3 prose-p:text-neon-muted prose-p:leading-relaxed prose-li:text-neon-muted prose-strong:text-white prose-table:text-sm">
@@ -47,32 +47,17 @@ const Terms: React.FC = () => {
             <li><strong>Progress Photos:</strong> Capture and store progress photos locally on your device.</li>
             <li><strong>Daily Check-ins:</strong> Record daily health data including weight, sleep, steps, and mood.</li>
             <li><strong>Apple HealthKit Integration:</strong> Read health data from Apple Health (with your permission).</li>
-            <li><strong>Cloud Backup (Optional):</strong> Sync and backup data to your account via Supabase.</li>
+            <li><strong>Offline-First Storage:</strong> All data is stored locally on your device. No account is required.</li>
           </ul>
           <p>The App is designed for personal fitness tracking purposes only.</p>
 
           <hr className="my-8 border-neon-line" />
 
-          <h2>4. Account Registration and Security</h2>
-
-          <h3>4.1 Account Creation</h3>
-          <p>To access certain features, you must create an account using email and password. You agree to provide accurate, current, and complete information during registration.</p>
-
-          <h3>4.2 Account Security</h3>
-          <p>You are responsible for:</p>
+          <h2>4. No Account Required</h2>
+          <p>GitFit does not require an account. There is no sign-up or sign-in, and the App works fully offline.</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Maintaining the confidentiality of your account credentials.</li>
-            <li>All activities that occur under your account.</li>
-            <li>Notifying us immediately of any unauthorized access.</li>
-          </ul>
-          <p>We are not liable for any loss or damage arising from your failure to protect your account credentials.</p>
-
-          <h3>4.3 Account Deletion</h3>
-          <p>You may delete your account at any time through the App's settings. Upon deletion:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>All cloud-stored data will be permanently deleted within 30 days.</li>
-            <li>The App will attempt to remove on-device data stored by the App (such as the local database, preferences, and app-stored files like progress photos).</li>
-            <li>This action is irreversible.</li>
+            <li>Your data is stored locally on your device and is not transmitted to us.</li>
+            <li>You can delete all App data at any time via the App's Settings (Privacy &amp; Data), or by uninstalling the App.</li>
           </ul>
           <p>Note: depending on your device settings, data may still exist in device-level backups (e.g., iCloud backups) until those backups are overwritten or deleted.</p>
 
@@ -83,7 +68,7 @@ const Terms: React.FC = () => {
           <ul className="list-disc pl-6 space-y-2">
             <li>Use the App for any unlawful purpose.</li>
             <li>Attempt to gain unauthorized access to any portion of the App or its systems.</li>
-            <li>Interfere with or disrupt the App's servers or networks.</li>
+            <li>Interfere with or disrupt the App or the gitfit.health website infrastructure.</li>
             <li>Reverse engineer, decompile, or disassemble any part of the App.</li>
             <li>Use the App to transmit malware, viruses, or other malicious code.</li>
             <li>Impersonate any person or entity.</li>
@@ -93,21 +78,9 @@ const Terms: React.FC = () => {
 
           <hr className="my-8 border-neon-line" />
 
-          <h2>6. Purchases and Payments</h2>
-
-          <h3>6.1 In-App Purchases</h3>
-          <p>GitFit may offer a one-time in-app purchase processed through Apple's App Store. All purchases are:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Processed by Apple, not by us.</li>
-            <li>Subject to Apple's terms and conditions.</li>
-            <li>Non-refundable except as required by applicable law or Apple's refund policies.</li>
-          </ul>
-
-          <h3>6.2 Free Trial</h3>
-          <p>GitFit does not currently offer subscriptions or a free trial. If we introduce a trial or subscription in the future, the terms will be disclosed clearly before you activate it.</p>
-
-          <h3>6.3 No Payment Information</h3>
-          <p>We do not receive, process, or store your payment card details. All payment processing is handled by Apple.</p>
+          <h2>6. Price and Purchases</h2>
+          <p>GitFit is fully free. There are no subscriptions, no in-app purchases, and no ads.</p>
+          <p>If we ever introduce paid features, the terms and pricing will be disclosed clearly in the App and in these Terms before you are charged.</p>
 
           <hr className="my-8 border-neon-line" />
 
@@ -134,8 +107,8 @@ const Terms: React.FC = () => {
           <h3>8.1 Your Data</h3>
           <p>You retain ownership of all data you input into the App, including workout logs, nutrition data, and progress photos.</p>
 
-          <h3>8.2 License to Us</h3>
-          <p>By using the App with cloud backup enabled, you grant us a limited license to store, process, and transmit your data solely for the purpose of providing the service to you.</p>
+          <h3>8.2 No License Needed</h3>
+          <p>Because your data stays on your device, you do not grant us any license to it. We never receive, store, or process your training data.</p>
 
           <h3>8.3 Responsibility</h3>
           <p>You are solely responsible for the content you upload or input. You represent that you have all necessary rights to such content.</p>
@@ -154,24 +127,16 @@ const Terms: React.FC = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-neon-line px-4 py-2">Supabase</td>
-                  <td className="border border-neon-line px-4 py-2">Authentication, database, cloud storage</td>
-                </tr>
-                <tr>
                   <td className="border border-neon-line px-4 py-2">OpenFoodFacts</td>
-                  <td className="border border-neon-line px-4 py-2">Food and nutrition database</td>
+                  <td className="border border-neon-line px-4 py-2">Food and nutrition database lookups</td>
                 </tr>
                 <tr>
                   <td className="border border-neon-line px-4 py-2">Apple HealthKit</td>
                   <td className="border border-neon-line px-4 py-2">Health data integration</td>
                 </tr>
                 <tr>
-                  <td className="border border-neon-line px-4 py-2">Apple Sign-In</td>
-                  <td className="border border-neon-line px-4 py-2">Social authentication</td>
-                </tr>
-                <tr>
                   <td className="border border-neon-line px-4 py-2">Apple App Store</td>
-                  <td className="border border-neon-line px-4 py-2">In-app purchase processing</td>
+                  <td className="border border-neon-line px-4 py-2">App distribution and updates</td>
                 </tr>
               </tbody>
             </table>
@@ -213,7 +178,7 @@ const Terms: React.FC = () => {
 
           <h2>12. Limitation of Liability</h2>
           <p className="uppercase text-sm">
-            TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW: WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES. WE SHALL NOT BE LIABLE FOR ANY LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES. OUR TOTAL LIABILITY FOR ANY CLAIMS ARISING FROM YOUR USE OF THE APP SHALL NOT EXCEED THE AMOUNT YOU PAID TO US IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM, OR £50 GBP, WHICHEVER IS LOWER.
+            TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW: WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES. WE SHALL NOT BE LIABLE FOR ANY LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES. OUR TOTAL LIABILITY FOR ANY CLAIMS ARISING FROM YOUR USE OF THE APP SHALL NOT EXCEED £50 GBP.
           </p>
           <p>This limitation applies regardless of the legal theory (contract, tort, strict liability, or otherwise) and even if we have been advised of the possibility of such damages.</p>
           <p>Nothing in these Terms limits or excludes liability that cannot be limited or excluded under applicable law (for example, liability for death or personal injury caused by negligence, fraud, or fraudulent misrepresentation).</p>
@@ -234,7 +199,7 @@ const Terms: React.FC = () => {
           <h2>14. Termination</h2>
 
           <h3>14.1 By You</h3>
-          <p>You may stop using the App at any time by deleting your account and uninstalling the App.</p>
+          <p>You may stop using the App at any time by deleting your data via the App's Settings (Privacy &amp; Data) and uninstalling the App.</p>
 
           <h3>14.2 By Us</h3>
           <p>We may suspend or terminate your access to the App at any time, with or without cause, with or without notice. Grounds for termination include, but are not limited to:</p>

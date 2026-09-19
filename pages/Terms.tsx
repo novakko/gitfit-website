@@ -1,18 +1,19 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Terms: React.FC = () => {
   return (
-    <div className="bg-white min-h-screen pt-24 pb-32">
+    <div className="min-h-screen pt-24 pb-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900 mb-4 tracking-tight text-center">GitFit Terms of Service</h1>
-          <p className="text-lg text-neutral-500 text-center"><strong>Last Updated:</strong> 31 December 2025 &nbsp;|&nbsp; <strong>Effective Date:</strong> 31 December 2025</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight text-center">GitFit Terms of Service</h1>
+          <p className="text-lg text-neon-muted text-center"><strong>Last Updated:</strong> 31 December 2025 &nbsp;|&nbsp; <strong>Effective Date:</strong> 31 December 2025</p>
         </header>
 
-        <div className="prose prose-neutral max-w-none prose-headings:text-neutral-900 prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3 prose-p:text-neutral-600 prose-p:leading-relaxed prose-li:text-neutral-600 prose-strong:text-neutral-800 prose-table:text-sm">
+        <div className="prose prose-neutral max-w-none prose-headings:text-white prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-3 prose-p:text-neon-muted prose-p:leading-relaxed prose-li:text-neon-muted prose-strong:text-white prose-table:text-sm">
           
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>1. Agreement to Terms</h2>
           <p>
@@ -22,7 +23,7 @@ const Terms: React.FC = () => {
             These Terms constitute a legally binding agreement between you and GitFit ("we," "us," or "our"). We reserve the right to modify these Terms at any time. Continued use of the App after modifications constitutes acceptance of the revised Terms.
           </p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>2. Eligibility</h2>
           <p>
@@ -35,7 +36,7 @@ const Terms: React.FC = () => {
           </ul>
           <p>If you do not meet the minimum age requirement, you may not use GitFit.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>3. Description of Service</h2>
           <p>GitFit is a fitness tracking application that provides:</p>
@@ -50,7 +51,7 @@ const Terms: React.FC = () => {
           </ul>
           <p>The App is designed for personal fitness tracking purposes only.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>4. Account Registration and Security</h2>
 
@@ -75,7 +76,7 @@ const Terms: React.FC = () => {
           </ul>
           <p>Note: depending on your device settings, data may still exist in device-level backups (e.g., iCloud backups) until those backups are overwritten or deleted.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>5. User Conduct</h2>
           <p>You agree not to:</p>
@@ -90,7 +91,7 @@ const Terms: React.FC = () => {
             <li>Circumvent, disable, or interfere with security-related features.</li>
           </ul>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>6. Purchases and Payments</h2>
 
@@ -108,7 +109,7 @@ const Terms: React.FC = () => {
           <h3>6.3 No Payment Information</h3>
           <p>We do not receive, process, or store your payment card details. All payment processing is handled by Apple.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>7. Intellectual Property</h2>
 
@@ -126,7 +127,7 @@ const Terms: React.FC = () => {
             <li>Remove any copyright or proprietary notices from the App.</li>
           </ul>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>8. User Content</h2>
 
@@ -139,45 +140,45 @@ const Terms: React.FC = () => {
           <h3>8.3 Responsibility</h3>
           <p>You are solely responsible for the content you upload or input. You represent that you have all necessary rights to such content.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>9. Third-Party Services</h2>
           <p>The App integrates with third-party services:</p>
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse border border-neutral-200 my-4">
+            <table className="w-full border-collapse border border-neon-line my-4">
               <thead>
                 <tr className="bg-neutral-50">
-                  <th className="border border-neutral-200 px-4 py-2 text-left">Service</th>
-                  <th className="border border-neutral-200 px-4 py-2 text-left">Purpose</th>
+                  <th className="border border-neon-line px-4 py-2 text-left">Service</th>
+                  <th className="border border-neon-line px-4 py-2 text-left">Purpose</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-neutral-200 px-4 py-2">Supabase</td>
-                  <td className="border border-neutral-200 px-4 py-2">Authentication, database, cloud storage</td>
+                  <td className="border border-neon-line px-4 py-2">Supabase</td>
+                  <td className="border border-neon-line px-4 py-2">Authentication, database, cloud storage</td>
                 </tr>
                 <tr>
-                  <td className="border border-neutral-200 px-4 py-2">OpenFoodFacts</td>
-                  <td className="border border-neutral-200 px-4 py-2">Food and nutrition database</td>
+                  <td className="border border-neon-line px-4 py-2">OpenFoodFacts</td>
+                  <td className="border border-neon-line px-4 py-2">Food and nutrition database</td>
                 </tr>
                 <tr>
-                  <td className="border border-neutral-200 px-4 py-2">Apple HealthKit</td>
-                  <td className="border border-neutral-200 px-4 py-2">Health data integration</td>
+                  <td className="border border-neon-line px-4 py-2">Apple HealthKit</td>
+                  <td className="border border-neon-line px-4 py-2">Health data integration</td>
                 </tr>
                 <tr>
-                  <td className="border border-neutral-200 px-4 py-2">Apple Sign-In</td>
-                  <td className="border border-neutral-200 px-4 py-2">Social authentication</td>
+                  <td className="border border-neon-line px-4 py-2">Apple Sign-In</td>
+                  <td className="border border-neon-line px-4 py-2">Social authentication</td>
                 </tr>
                 <tr>
-                  <td className="border border-neutral-200 px-4 py-2">Apple App Store</td>
-                  <td className="border border-neutral-200 px-4 py-2">In-app purchase processing</td>
+                  <td className="border border-neon-line px-4 py-2">Apple App Store</td>
+                  <td className="border border-neon-line px-4 py-2">In-app purchase processing</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p>Your use of these services is subject to their respective terms and privacy policies. We are not responsible for third-party service availability, accuracy, or conduct.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>10. Health Disclaimer</h2>
           <p><strong>GitFit is not a medical device and does not provide medical advice.</strong></p>
@@ -190,7 +191,7 @@ const Terms: React.FC = () => {
           </ul>
           <p>If you have a medical condition, injury, or health concern, seek professional medical advice before using the App.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>11. Disclaimers</h2>
 
@@ -208,7 +209,7 @@ const Terms: React.FC = () => {
             <li>Results from using the App will meet your expectations.</li>
           </ul>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>12. Limitation of Liability</h2>
           <p className="uppercase text-sm">
@@ -217,7 +218,7 @@ const Terms: React.FC = () => {
           <p>This limitation applies regardless of the legal theory (contract, tort, strict liability, or otherwise) and even if we have been advised of the possibility of such damages.</p>
           <p>Nothing in these Terms limits or excludes liability that cannot be limited or excluded under applicable law (for example, liability for death or personal injury caused by negligence, fraud, or fraudulent misrepresentation).</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>13. Indemnification</h2>
           <p>You agree to indemnify, defend, and hold harmless GitFit, its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
@@ -228,7 +229,7 @@ const Terms: React.FC = () => {
             <li>Your user content.</li>
           </ul>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>14. Termination</h2>
 
@@ -250,7 +251,7 @@ const Terms: React.FC = () => {
             <li>Provisions that by their nature should survive (including Sections 7, 10, 11, 12, 13, and 16) will remain in effect.</li>
           </ul>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>15. Changes to the App</h2>
           <p>We reserve the right to:</p>
@@ -261,7 +262,7 @@ const Terms: React.FC = () => {
           </ul>
           <p>We are not liable to you or any third party for any modification, suspension, or discontinuation.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>16. Governing Law and Dispute Resolution</h2>
 
@@ -269,10 +270,10 @@ const Terms: React.FC = () => {
           <p>These Terms are governed by and construed in accordance with the laws of Scotland.</p>
 
           <h3>16.2 Dispute Resolution</h3>
-          <p>We encourage you to contact us first at <a href="mailto:support@gitfit.health" className="text-orange-600 underline">support@gitfit.health</a> so we can try to resolve any issue informally.</p>
+          <p>We encourage you to contact us first at <a href="mailto:support@gitfit.health" className="text-neon-cyan underline">support@gitfit.health</a> so we can try to resolve any issue informally.</p>
           <p>If a dispute cannot be resolved informally, the courts of Scotland will have jurisdiction, except where mandatory consumer-protection laws in your country/region give you the right to bring proceedings in your local courts.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>17. Apple-Specific Terms</h2>
           <p>If you access the App through the Apple App Store, you acknowledge:</p>
@@ -284,44 +285,44 @@ const Terms: React.FC = () => {
             <li>Apple and its subsidiaries are third-party beneficiaries of these Terms. Upon your acceptance, Apple has the right to enforce these Terms against you.</li>
           </ul>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>18. Severability</h2>
           <p>If any provision of these Terms is held to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>19. Entire Agreement</h2>
           <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and GitFit regarding the use of the App. These Terms supersede all prior agreements, representations, and understandings.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>20. Waiver</h2>
           <p>Our failure to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. Any waiver must be in writing and signed by us.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>21. Assignment</h2>
           <p>You may not assign or transfer these Terms or your rights under these Terms without our prior written consent. We may assign these Terms without restriction.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>22. Contact Information</h2>
           <p>For questions or concerns regarding these Terms, contact us:</p>
           <p><strong>GitFit (Independent Developer)</strong></p>
           <ul className="list-none pl-0 space-y-1">
-            <li><strong>Email:</strong> <a href="mailto:support@gitfit.health" className="text-orange-600 underline">support@gitfit.health</a></li>
-            <li><strong>Website:</strong> <a href="https://gitfit.health" className="text-orange-600 underline">https://gitfit.health</a></li>
+            <li><strong>Email:</strong> <a href="mailto:support@gitfit.health" className="text-neon-cyan underline">support@gitfit.health</a></li>
+            <li><strong>Website:</strong> <a href="https://gitfit.health" className="text-neon-cyan underline">https://gitfit.health</a></li>
           </ul>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
           <h2>23. Privacy</h2>
-          <p>Your use of the App is also governed by our <a href="/privacy" className="text-orange-600 underline">Privacy Policy</a>. By using the App, you consent to our collection and use of data as described in the Privacy Policy.</p>
+          <p>Your use of the App is also governed by our <Link to="/privacy" className="text-neon-cyan underline">Privacy Policy</Link>. By using the App, you consent to our collection and use of data as described in the Privacy Policy.</p>
 
-          <hr className="my-8 border-neutral-200" />
+          <hr className="my-8 border-neon-line" />
 
-          <p className="text-sm text-neutral-400 italic text-center">These Terms of Service were created for GitFit. For the most current version, please check within the App or on our website.</p>
+          <p className="text-sm text-neon-muted italic text-center">These Terms of Service were created for GitFit. For the most current version, please check within the App or on our website.</p>
 
         </div>
       </div>

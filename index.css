@@ -17,6 +17,11 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
+  .menu-solid {
+    background: rgba(13, 13, 26, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
   .neon-card {
     @apply bg-neon-surface/70 border border-neon-line rounded-neon;
   }

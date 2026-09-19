@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
       </nav>
 
       {open && (
-        <div className="md:hidden glass-dark border-b border-neon-line/60 px-4 pt-2 pb-4 space-y-1">
+        <div className="md:hidden menu-solid border-b border-neon-line/60 px-4 pt-2 pb-4 space-y-1">
           <Link to="/" className="block px-3 py-2 rounded-neon text-neon-muted hover:text-white hover:bg-neon-surface/70" onClick={() => setOpen(false)}>Home</Link>
           <Link to="/how-to" className="block px-3 py-2 rounded-neon text-neon-muted hover:text-white hover:bg-neon-surface/70" onClick={() => setOpen(false)}>How To</Link>
           <Link to="/faq" className="block px-3 py-2 rounded-neon text-neon-muted hover:text-white hover:bg-neon-surface/70" onClick={() => setOpen(false)}>FAQ</Link>

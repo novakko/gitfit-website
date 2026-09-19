@@ -1,63 +1,60 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Dumbbell, Instagram, Mail } from 'lucide-react';
+import { Dumbbell, Mail, Instagram } from 'lucide-react';
+import { SITE } from '../config';
 
-const Footer: React.FC = () => {
-  return (
-    <footer className="bg-white border-t border-orange-100 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div className="col-span-1 md:col-span-1">
-            <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="bg-orange-600 p-1.5 rounded-lg">
-                <Dumbbell className="text-white w-5 h-5" />
-              </div>
-              <span className="text-xl font-bold tracking-tight">GitFit</span>
-            </Link>
-            <p className="text-neutral-500 text-sm leading-relaxed mb-6">
-              Privacy-first strength tracking for those who value their data as much as their gains. Built for the modern athlete.
-            </p>
-            <div className="flex space-x-4">
-              <a href="https://instagram.com/gitfit.app" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-orange-600 transition-colors"><Instagram size={20} /></a>
-              <a href="mailto:support@gitfit.health" className="text-neutral-400 hover:text-orange-600 transition-colors"><Mail size={20} /></a>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-neutral-900 mb-4">Product</h3>
-            <ul className="space-y-2">
-              <li><Link to="/" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Home</Link></li>
-              <li><Link to="/pricing" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Support Us</Link></li>
-              <li><Link to="/how-to" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">How To</Link></li>
-              <li><Link to="/faq" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">FAQ</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-neutral-900 mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li><Link to="/privacy" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-sm text-neutral-500 hover:text-orange-600 transition-colors">Terms of Service</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-neutral-900 mb-4">Support</h3>
-            <p className="text-sm text-neutral-500 mb-4">Questions or feedback? Reach out to our UK-based team.</p>
-            <Link to="/faq" className="text-sm font-medium text-orange-600 hover:text-orange-700">Contact Support &rarr;</Link>
-          </div>
+const Footer: React.FC = () => (
+  <footer className="border-t border-neon-line bg-neon-bg">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid gap-10 md:grid-cols-4">
+      <div className="md:col-span-2 max-w-sm">
+        <div className="flex items-center gap-2.5 mb-3">
+          <span className="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center">
+            <Dumbbell className="w-5 h-5 text-white" />
+          </span>
+          <span className="text-lg font-bold text-white">GitFit</span>
         </div>
-
-        <div className="border-t border-neutral-100 pt-8 flex flex-col md:row items-center justify-between text-neutral-400 text-xs">
-          <p>© {new Date().getFullYear()} GitFit App. All rights reserved. Designed for iOS.</p>
-          <div className="mt-4 md:mt-0 flex space-x-6">
-            <p>Built with Privacy in the UK</p>
-          </div>
-        </div>
+        <p className="text-neon-muted text-sm leading-relaxed">
+          Privacy-first strength training, nutrition and progress tracking.
+          Your data stays on your device — export it anytime, delete it anytime.
+        </p>
       </div>
-    </footer>
-  );
-};
+
+      <div>
+        <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Product</h3>
+        <ul className="space-y-2.5 text-sm">
+          <li><Link to="/" className="text-neon-muted hover:text-neon-cyan transition-colors">Home</Link></li>
+          <li><Link to="/how-to" className="text-neon-muted hover:text-neon-cyan transition-colors">How To</Link></li>
+          <li><Link to="/faq" className="text-neon-muted hover:text-neon-cyan transition-colors">FAQ</Link></li>
+          <li><Link to="/contact" className="text-neon-muted hover:text-neon-cyan transition-colors">Contact</Link></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Legal &amp; Connect</h3>
+        <ul className="space-y-2.5 text-sm">
+          <li><Link to="/privacy" className="text-neon-muted hover:text-neon-cyan transition-colors">Privacy Policy</Link></li>
+          <li><Link to="/terms" className="text-neon-muted hover:text-neon-cyan transition-colors">Terms of Service</Link></li>
+          <li>
+            <a href={`mailto:${SITE.supportEmail}`} className="text-neon-muted hover:text-neon-cyan transition-colors inline-flex items-center gap-1.5">
+              <Mail className="w-4 h-4" /> {SITE.supportEmail}
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/gitfit.app" target="_blank" rel="noopener" className="text-neon-muted hover:text-neon-cyan transition-colors inline-flex items-center gap-1.5">
+              <Instagram className="w-4 h-4" /> Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div className="border-t border-neon-line-soft">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-neon-muted">
+        <p>© {new Date().getFullYear()} {SITE.appName} · Free. Private. Powerful.</p>
+        <p>Made for iPhone · iOS 16+</p>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

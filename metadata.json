@@ -1,5 +1,4 @@
 {
-  "name": "Copy of GitFit - Privacy-First Fitness",
-  "description": "A premium, minimalist marketing website for the GitFit iOS fitness app, featuring workout tracking, nutrition, and HealthKit integration with a focus on privacy and UK/EU users.",
-  "requestFramePermissions": []
+  "name": "gitfit-website",
+  "description": "Marketing website for GitFit (gitfit.health) \u2014 the offline-first, privacy-first strength & nutrition tracker. Dark Modern-Neon design matching the app."
 }
